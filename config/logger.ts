@@ -40,7 +40,7 @@ const transports = [
     level: 'error'
   }),
   new winston.transports.File({
-    filename: 'logs/all.logs'
+    filename: 'logs/all.log'
   }),
 ];
 
