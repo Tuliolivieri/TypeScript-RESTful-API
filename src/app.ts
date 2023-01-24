@@ -1,8 +1,10 @@
 require('dotenv').config();
 
+import express from 'express';
+
 import config from 'config';
 import db from '../config/db';
-import express from 'express';
+import Logger from '../config/logger';
 import router from './router';
 
 const app = express();
@@ -15,5 +17,5 @@ app.use('/api', router);
 
 app.listen(port, async () => {
   await db();
-  console.log(`Aplicação sendo executada na porta: ${port}`);
+  Logger.info(`Aplicação sendo executada na porta: ${port}`);
 });
